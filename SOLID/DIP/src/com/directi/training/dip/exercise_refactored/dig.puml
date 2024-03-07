@@ -1,0 +1,34 @@
+@startuml
+interface IDatabase {
+    +int write(String inputString);
+}
+ class MyDatabase implements IDatabase {
+   - Map<Integer, String> _data
+    - int _count 
+}
+
+interface IEncodeClient {
+    void encodeWithFiles(String inputFile,String outputFile) throws IOException
+    void encodeBasedOnNetworkAndDatabase(IDatabase database, String protocol, String file, String host) throws IOException
+}
+class MyEncodeClient implements IEncodeClient {
+
+}
+interface IEncodeClient {
+    +void encodeWithFiles(String inputFile,String outputFile) throws IOException;
+    + void encodeBasedOnNetworkAndDatabase(IDatabase database, String protocol, String file, String host) throws IOException;
+}
+
+class EncodingModuleClient {
+    database: IDatabase
+    protocol: String
+    file: String
+    host: String    
+    }
+
+
+ EncodingModuleClient -right-> IEncodeClient
+
+
+
+@enduml
