@@ -11,7 +11,7 @@ interface IEncodeClient {
     void encodeWithFiles(String inputFile,String outputFile) throws IOException
     void encodeBasedOnNetworkAndDatabase(IDatabase database, String protocol, String file, String host) throws IOException
 }
-class MyEncodeClient implements IEncodeClient {
+class EncodingModule implements IEncodeClient {
 
 }
 interface IEncodeClient {
@@ -27,8 +27,8 @@ class EncodingModuleClient {
     }
 
 
- EncodingModuleClient -right-> IEncodeClient
-
+ EncodingModule -right-> IEncodeClient
+EncodingModule -> IDatabase
 
 
 @enduml
