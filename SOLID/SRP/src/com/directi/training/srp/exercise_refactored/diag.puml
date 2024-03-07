@@ -24,6 +24,7 @@ class CarOperations{
 
 CarDb -> Car
 CarDataFormatter -> Car
-CarOperations -> Car
+CarOperations -> CarDb
+
 
 @enduml
